@@ -26,32 +26,53 @@ function App() {
       }, 1500);
   }
 
-  const toggleMode = ()=>{
-    if(mode === 'light'){
-      setMode('dark');
-      document.body.style.backgroundColor = '#042743';
-      showAlert("Dark mode has been enabled", "success");
-      document.title = 'TextUtils - Dark Mode';
-      // setInterval(() => {
-      //   document.title = 'TextUtils is Amazing Mode';
-      // }, 2000);
-      // setInterval(() => {
-      //   document.title = 'Install TextUtils Now';
-      // }, 1500);
+  const toggleMode = (type)=>{
+    setMode(type)
+
+    if(type=="success"){
+      document.body.style.backgroundColor="#3bfb24"
+
+      document.body.style.color="white"
+      document.body.style.fontWeight="bold"
     }
+    else if(type=="dark"){
+      document.body.style.backgroundColor="black"
+
+      document.body.style.color="white"
+
+      
+      document.body.style.fontWeight="bold"
+    }
+    else if(type=="light"){
+      document.body.style.backgroundColor="white"
+
+      document.body.style.color="white"
+
+      
+      document.body.style.fontWeight="bold"
+    }
+    // else if(type=="light"){
+    //   document.body.style.backgroundColor="white;"
+
+    //   document.body.style.color="white"
+    //   // document.body.style.fontWeight="bold"
+    // }
     else{
-      setMode('light');
-      document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled", "success");
-      document.title = 'TextUtils - Light Mode';
+      document.body.style.backgroundColor="yellow"
+
+      document.body.style.color="white"
+      document.body.style.fontWeight="bold"
     }
+    
+
+     
   }
   return (
     <>
     {/* <Navbar title="TextUtils" aboutText="About TextUtils" /> */}
     {/* <Navbar/> */}
     {/* <Router> */}
-    <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+    <Navbar title="Text Analyzor" mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}/>
     <div className="container my-3">
     {/* <Switch> */}
@@ -64,7 +85,7 @@ function App() {
             <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
           </Route> */}
 
-          <TextForm/>
+          <TextForm showAlert={showAlert}/>
     {/* </Switch> */}
     </div>
     {/* </Router> */}

@@ -1,0 +1,15 @@
+/* .navbar-light .navbar-nav .nav-link{
+    color: green;
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+*{
+    font-family: 'Lobster', cursive;
+
+}
+.text-heading{
+    font-family: 'Rampart One', cursive;
+}
+
